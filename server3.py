@@ -158,11 +158,11 @@ def generate_csv():
 
 def read_csv():
     """ Read a CSV or order history into a list. """
-    with open('test.csv', 'rt') as f:
+
+    with open('test.csv', 'r', encoding='utf-8') as f:
         for time, stock, side, order, size in csv.reader(f):
             yield dateutil.parser.parse(time), stock, side, float(order), int(size)
-
-
+ 
 ################################################################################
 #
 # Server
